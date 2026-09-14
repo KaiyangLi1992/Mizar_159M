@@ -126,4 +126,3 @@ the historical recipe. Architecture/optimizer source is retained, with the
 small portability-only edits documented in `provenance/release_patches.json`.
 New inference defaults to vLLM where supported. Forced-choice scoring, option
 likelihood ranking and constrained A/B/C/D decoding are excluded.
-
