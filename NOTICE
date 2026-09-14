@@ -1,0 +1,17 @@
+This repository contains code derived from the Mellow audio-language model
+implementation, Copyright (c) 2024 Soham, distributed under the MIT License.
+
+Mizar experiment modifications, portable launchers, documentation, and
+provenance records were prepared for the 159M Mizar research release.
+
+No ownership or license change is asserted for AudioMCQ, ReasonAQA, AVQA,
+MMAU, MMAR, ADQA, CED-Small, SmolLM2, or Qwen2.5-Omni assets. Obtain and use
+those assets under their upstream terms.
+
+Local release additions:
+- Bundled CED-Small (mispeech/ced-small) and SmolLM2-135M
+  (HuggingFaceTB/SmolLM2-135M) retain their Apache-2.0 upstream licensing.
+  See assets/UPSTREAM.md and assets/LICENSE-APACHE-2.0.
+- Dataset metadata and evaluation source retain their upstream terms.
+- Optional audio-root relocation and release utilities are documented in
+  provenance/release_patches.json. Original research artifacts are unchanged.

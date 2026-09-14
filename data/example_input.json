@@ -1,0 +1,7 @@
+[
+  {
+    "id": "example-001",
+    "audio": "/absolute/path/to/your.wav",
+    "question": "What can be heard in this recording?"
+  }
+]

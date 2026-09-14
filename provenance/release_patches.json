@@ -1,0 +1,56 @@
+[
+  {
+    "path": "runtime/stage1/metrics/get_metrics.py",
+    "original_sha256": "c4828f2201f66c121ed36f5c36c17a67bc58ea732a1089465f633d9c2de33ca2",
+    "release_sha256": "07ace8d1d80cf43a718305fbb3044d3f4bb5ebd5d26910ff7668e82738622bf6",
+    "reason": "Remove unused pysepm import; training and metrics do not reference it."
+  },
+  {
+    "path": "runtime/stage1/data/audiotext_dataset.py",
+    "original_sha256": "d4733b6c2485192bf4dee9768e5520bbc38e2f2ee9c2b0a79adf7417b5c7295b",
+    "release_sha256": "c791a13f0d64de409006b5bc3a0b6e336cd63cb98faa98800ac70fba4624b860",
+    "reason": "Optional path-only relocation at audio I/O. Manifest strings, cache keys and audio preprocessing preserved."
+  },
+  {
+    "path": "runtime/stage1/data/audiotext_eval_dataset.py",
+    "original_sha256": "0ce0080af6ecdf0d33024d1d72e00a6c229386250407df14af31e3f9217dd9ae",
+    "release_sha256": "f1f8674200fd9c7af85c3c9626b7e4a8c0d8ff5b953347f47e51eb6a1fbada55",
+    "reason": "Optional path-only relocation at audio I/O. Manifest strings, cache keys and audio preprocessing preserved."
+  },
+  {
+    "path": "runtime/stage2/metrics/get_metrics.py",
+    "original_sha256": "c4828f2201f66c121ed36f5c36c17a67bc58ea732a1089465f633d9c2de33ca2",
+    "release_sha256": "07ace8d1d80cf43a718305fbb3044d3f4bb5ebd5d26910ff7668e82738622bf6",
+    "reason": "Remove unused pysepm import; training and metrics do not reference it."
+  },
+  {
+    "path": "runtime/stage2/data/audiotext_dataset.py",
+    "original_sha256": "08f3156dd4bdb545180b29a6ab609a81e165741236bab918db8229c87a779485",
+    "release_sha256": "1e3edec8b310bf7e86ee0b5cfc8f98b201f9347a51e1beacb63b2453551cd6fa",
+    "reason": "Optional path-only relocation at audio I/O. Manifest strings, cache keys and audio preprocessing preserved."
+  },
+  {
+    "path": "runtime/stage2/data/audiotext_eval_dataset.py",
+    "original_sha256": "0ce0080af6ecdf0d33024d1d72e00a6c229386250407df14af31e3f9217dd9ae",
+    "release_sha256": "f1f8674200fd9c7af85c3c9626b7e4a8c0d8ff5b953347f47e51eb6a1fbada55",
+    "reason": "Optional path-only relocation at audio I/O. Manifest strings, cache keys and audio preprocessing preserved."
+  },
+  {
+    "path": "runtime/stage3/metrics/get_metrics.py",
+    "original_sha256": "c4828f2201f66c121ed36f5c36c17a67bc58ea732a1089465f633d9c2de33ca2",
+    "release_sha256": "07ace8d1d80cf43a718305fbb3044d3f4bb5ebd5d26910ff7668e82738622bf6",
+    "reason": "Remove unused pysepm import; training and metrics do not reference it."
+  },
+  {
+    "path": "runtime/stage3/data/audiotext_dataset.py",
+    "original_sha256": "a7b26a79e4514b40d4a3e31355db9564852eae6c953cce1f364a3f91952d8238",
+    "release_sha256": "ea35cb835d04d9a5c930255547195d89dbfc7d73e275f760815528831f5f8ef7",
+    "reason": "Optional path-only relocation at audio I/O. Manifest strings, cache keys and audio preprocessing preserved."
+  },
+  {
+    "path": "runtime/stage3/data/audiotext_eval_dataset.py",
+    "original_sha256": "0ce0080af6ecdf0d33024d1d72e00a6c229386250407df14af31e3f9217dd9ae",
+    "release_sha256": "f1f8674200fd9c7af85c3c9626b7e4a8c0d8ff5b953347f47e51eb6a1fbada55",
+    "reason": "Optional path-only relocation at audio I/O. Manifest strings, cache keys and audio preprocessing preserved."
+  }
+]

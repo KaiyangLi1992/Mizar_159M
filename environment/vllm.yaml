@@ -1,0 +1,21 @@
+name: mizar-vllm
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - ffmpeg
+  - libsndfile
+  - pip:
+      - vllm==0.11.0
+      - torch==2.8.0
+      - torchaudio==2.8.0
+      - transformers==4.57.6
+      - qwen-omni-utils
+      - numpy==2.2.6
+      - librosa==0.10.0.post2
+      - soundfile==0.13.1
+      - PyYAML==6.0.2
+      - safetensors==0.7.0
+      - huggingface-hub==0.36.2
+      - tqdm==4.67.3

@@ -1,0 +1,991 @@
+{
+  "capacities": {
+    "train_rows": 261171,
+    "definitions": {
+      "quadrant_gen0": {
+        "B": 182100,
+        "A": 44499,
+        "C": 20397,
+        "D": 14175
+      },
+      "quadrant_gen4": {
+        "A": 115699,
+        "B": 94260,
+        "D": 43932,
+        "C": 7280
+      }
+    },
+    "source": {
+      "audiomcq": 230599,
+      "avqa": 30572
+    }
+  },
+  "freeze": {
+    "code": [
+      {
+        "path": "/home/kaiyli/mellow_150m_best_ckpt_44p6522/stage3_merged_strong_avqa_v1/gen.py",
+        "sha256": "26947d29c483563b2a6aa08e416b9596a25dc45dd0fdc05f1165b16f2d87ecd4",
+        "bytes": 14706
+      },
+      {
+        "path": "/home/kaiyli/mellow_150m_best_ckpt_44p6522/stage3_merged_strong_avqa_v1/workflow.py",
+        "sha256": "c2952e85f63c5ce907356e18cd5ee35b43dcb2f737b7a3676bf299b6ee37bdf7",
+        "bytes": 15386
+      },
+      {
+        "path": "/home/kaiyli/mellow_150m_best_ckpt_44p6522/stage3_merged_strong_avqa_v1/eval/runtime_wrapper.py",
+        "sha256": "c61b4c9ba2d10f4de99c77238afdafdb03ffb696c81f960de542ad50b3842835",
+        "bytes": 3608
+      },
+      {
+        "path": "/home/kaiyli/mellow_150m_best_ckpt_44p6522/three_stage_single_seed_v2/pipeline.py",
+        "sha256": "ff83640492db2c204a474d604eb1b05deb70e3545290e2447b2ee6bbb1061ac5",
+        "bytes": 15970
+      },
+      {
+        "path": "/home/kaiyli/mellow_150m_best_ckpt_44p6522/stage3_generative_pool_v1/scripts/strong_dual_round.py",
+        "sha256": "3558fc603e45b20b319871767a7971d7c768d260cfd36c8f008284ae84dc1b16",
+        "bytes": 17116
+      },
+      {
+        "path": "/home/kaiyli/mellow_150m_best_ckpt_44p6522/paper/experiments_20260906_table14_5seed_v1/train_runtime.py",
+        "sha256": "3689cb4c3769d80a9226bd6c40a67e32faa0ab4500d458b4cefc71d181374e99",
+        "bytes": 5642
+      },
+      {
+        "path": "/home/kaiyli/mellow_150m_best_ckpt_44p6522/stage3_generative_pool_v1/scripts/filter_pilot_v2.py",
+        "sha256": "f577afc682733b2cba0253bd5ad900a7a9b7f10dcdc4ccc53be10a8712f07c13",
+        "bytes": 20815
+      },
+      {
+        "path": "/home/kaiyli/mellow_150m_best_ckpt_44p6522/stage3_generative_pool_v1/scripts/teacher_vllm_v3.py",
+        "sha256": "1e8464735215676f644712628060e02ea74d85704925221822ccb9b4c3c64740",
+        "bytes": 14293
+      }
+    ],
+    "sources": [
+      {
+        "bytes": 364696419,
+        "path": "/mnt/ons_data/kaiyli/mellow_eval/paper_table14_20260906_v1/inputs/A2_RAW_DIRECT.json",
+        "sha256": "c4b1862f58148d2728dfad10ee8346974924badca6de6b82181ffe605225cc65"
+      },
+      {
+        "path": "/mnt/ons_data/kaiyli/mellow_eval/v4_phase_s2_ac_direct_lr4_pilot_v1/runs/S2ACD_A2_LR200/lineage-a2direct-lr200-seed20260904-v1/2026-09-04_15-20-42/model-S2ACD_A2_LR200--optstep-000906.ckpt",
+        "sha256": "2b532a55433f88ae0fd3190b72200bfeb6bc798e7e28d5a9399fe3a2e985f9d5",
+        "bytes": 637462632
+      },
+      {
+        "path": "/mnt/ons_data/kaiyli/mellow_eval/stage3_generative_pool_v1/strong_dual_round_v1/materialized/q4_s20260905.yaml",
+        "sha256": "c817c2c19f15fd14285752c8dad78da58a4a63ec2d8c5f5331177ad6b5fd6515",
+        "bytes": 5025
+      },
+      {
+        "bytes": 150878218,
+        "path": "/mnt/ons_data/kaiyli/mellow_eval/stage3_generative_pool_v1/strong_dual_round_v1/pools/LABELS_GEN0_GEN4.json",
+        "sha256": "0aa7a8e42f8cc20a19cd0f053b941dbeec51275172fa6f9ecfd0c815ba0f404a"
+      },
+      {
+        "bytes": 385987934,
+        "path": "/mnt/ons_data/kaiyli/mellow_eval/stage3_generative_pool_v1/strong_rotation_v1/CANDIDATES.json",
+        "sha256": "1aba1d33ad925830d73175fa4393fce1c125dde50548680808f25b84597a9028"
+      },
+      {
+        "path": "/home/kaiyli/mizar_159m_gitlab_release/data/q4/labels_gen0_gen4.executed.json.gz",
+        "sha256": "bc478621f36e5cd8e3c44dfd32ac60d1bf62807ae3dc819b017be99240db4137",
+        "bytes": 14588398
+      },
+      {
+        "path": "/home/kaiyli/mellow_150m_best_ckpt_44p6522/paper/experiments_20260906_table14_v1/eval/FREEZE.json",
+        "sha256": "fbd9f432fb4b78050472dfe4ec42d34df8d443d46121fe8d373eeac6dbffb49f",
+        "bytes": 7902
+      }
+    ],
+    "runtime_sha": "74f4dcc7bd425ad81528d4120a08615646aa87ab1006ae819d744cb05e6595db",
+    "seeds": [
+      20260905,
+      20260906,
+      20260907,
+      20260908,
+      20260909
+    ],
+    "arms": [
+      "R0",
+      "Q0",
+      "R4",
+      "Q4"
+    ],
+    "union_rows": 289952,
+    "strong_reused": 256077,
+    "avqa_gen4_new": 33875,
+    "avqa_split": {
+      "train": 30572,
+      "probe": 3303
+    },
+    "recording_group_scope": "exact resolved paths; not an exhaustive near-duplicate audit",
+    "REF_rerun": false,
+    "official_generation_only": true,
+    "training_precision": "unaltered executed GitLab runtime; no new AMP branch",
+    "primary_step": 200,
+    "actual_steps": 600,
+    "checkpoint_steps": [
+      100,
+      200,
+      400,
+      600
+    ]
+  },
+  "q4_registry": [
+    {
+      "token": "merged_q4_s20260905",
+      "arm": "Q4",
+      "seed": 20260905,
+      "candidate": true,
+      "smoke": false,
+      "runtime": "/home/kaiyli/mellow_150m_best_ckpt_44p6522/stage3_generative_pool_v1/runtime_snapshot_v3",
+      "run_dir": "/mnt/ons_data/kaiyli/mellow_eval/stage3_merged_strong_avqa_v1/runs/merged_q4_s20260905",
+      "config": {
+        "path": "/mnt/ons_data/kaiyli/mellow_eval/stage3_merged_strong_avqa_v1/materialized/merged_q4_s20260905.yaml",
+        "sha256": "1cf168a2a12f52e965c8f1c63401e5ad5eb9e972568832e658ebe703d7b85c25",
+        "bytes": 5047
+      },
+      "manifest": {
+        "path": "/mnt/ons_data/kaiyli/mellow_eval/stage3_merged_strong_avqa_v1/materialized/merged_q4_s20260905.json",
+        "sha256": "ea3467760ac923a4c23f30eda6ab0a32cbbd7faf888702a9493944479622891e",
+        "bytes": 64374907
+      },
+      "pretrain_freeze": {
+        "path": "/mnt/ons_data/kaiyli/mellow_eval/stage3_merged_strong_avqa_v1/FREEZE.json",
+        "sha256": "1d9ffa8e333f890697fc8fba475ce9e1c0423b4959fec7eca88649d2ab8625d9",
+        "bytes": 4284
+      },
+      "myconfig": "S3STRONG_MERGED_Q4_S20260905",
+      "expected_steps": 600,
+      "checkpoint_steps": [
+        100,
+        200,
+        400,
+        600
+      ],
+      "actual_exposures": {
+        "100": {
+          "source": {
+            "audiomcq": 5719,
+            "avqa": 681
+          },
+          "gold_option_index": {
+            "0": 1599,
+            "3": 1608,
+            "2": 1593,
+            "1": 1600
+          },
+          "quadrant_gen0": {
+            "B": 4738,
+            "A": 1099,
+            "D": 106,
+            "C": 457
+          },
+          "quadrant_gen4": {
+            "B": 2257,
+            "A": 3227,
+            "C": 595,
+            "D": 321
+          }
+        },
+        "200": {
+          "source": {
+            "audiomcq": 11507,
+            "avqa": 1293
+          },
+          "gold_option_index": {
+            "0": 3229,
+            "3": 3197,
+            "2": 3172,
+            "1": 3202
+          },
+          "quadrant_gen0": {
+            "B": 9434,
+            "A": 2211,
+            "D": 207,
+            "C": 948
+          },
+          "quadrant_gen4": {
+            "B": 4543,
+            "A": 6415,
+            "C": 1195,
+            "D": 647
+          }
+        },
+        "400": {
+          "source": {
+            "audiomcq": 22982,
+            "avqa": 2618
+          },
+          "gold_option_index": {
+            "0": 6371,
+            "3": 6379,
+            "2": 6385,
+            "1": 6465
+          },
+          "quadrant_gen0": {
+            "B": 18774,
+            "A": 4417,
+            "D": 419,
+            "C": 1990
+          },
+          "quadrant_gen4": {
+            "B": 9003,
+            "A": 12788,
+            "C": 2484,
+            "D": 1325
+          }
+        },
+        "600": {
+          "source": {
+            "audiomcq": 34510,
+            "avqa": 3890
+          },
+          "gold_option_index": {
+            "0": 9600,
+            "3": 9600,
+            "2": 9600,
+            "1": 9600
+          },
+          "quadrant_gen0": {
+            "B": 28140,
+            "A": 6610,
+            "D": 624,
+            "C": 3026
+          },
+          "quadrant_gen4": {
+            "B": 13440,
+            "A": 19200,
+            "C": 3840,
+            "D": 1920
+          }
+        }
+      }
+    },
+    {
+      "token": "merged_q4_s20260906",
+      "arm": "Q4",
+      "seed": 20260906,
+      "candidate": true,
+      "smoke": false,
+      "runtime": "/home/kaiyli/mellow_150m_best_ckpt_44p6522/stage3_generative_pool_v1/runtime_snapshot_v3",
+      "run_dir": "/mnt/ons_data/kaiyli/mellow_eval/stage3_merged_strong_avqa_v1/runs/merged_q4_s20260906",
+      "config": {
+        "path": "/mnt/ons_data/kaiyli/mellow_eval/stage3_merged_strong_avqa_v1/materialized/merged_q4_s20260906.yaml",
+        "sha256": "034a88dca2f2ab7cbb2c82a960d918d780f1da1e702e4c2a5f33053d16c314ee",
+        "bytes": 5047
+      },
+      "manifest": {
+        "path": "/mnt/ons_data/kaiyli/mellow_eval/stage3_merged_strong_avqa_v1/materialized/merged_q4_s20260906.json",
+        "sha256": "d6a6f72eb14d5f6714e3fc72369a8687c457f80c700b03daf84e3c358d4a8481",
+        "bytes": 64351168
+      },
+      "pretrain_freeze": {
+        "path": "/mnt/ons_data/kaiyli/mellow_eval/stage3_merged_strong_avqa_v1/FREEZE.json",
+        "sha256": "1d9ffa8e333f890697fc8fba475ce9e1c0423b4959fec7eca88649d2ab8625d9",
+        "bytes": 4284
+      },
+      "myconfig": "S3STRONG_MERGED_Q4_S20260906",
+      "expected_steps": 600,
+      "checkpoint_steps": [
+        100,
+        200,
+        400,
+        600
+      ],
+      "actual_exposures": {
+        "100": {
+          "source": {
+            "audiomcq": 5755,
+            "avqa": 645
+          },
+          "gold_option_index": {
+            "1": 1587,
+            "2": 1601,
+            "0": 1620,
+            "3": 1592
+          },
+          "quadrant_gen0": {
+            "D": 104,
+            "A": 1047,
+            "B": 4715,
+            "C": 534
+          },
+          "quadrant_gen4": {
+            "D": 319,
+            "A": 3171,
+            "B": 2237,
+            "C": 673
+          }
+        },
+        "200": {
+          "source": {
+            "audiomcq": 11485,
+            "avqa": 1315
+          },
+          "gold_option_index": {
+            "1": 3195,
+            "2": 3223,
+            "0": 3227,
+            "3": 3155
+          },
+          "quadrant_gen0": {
+            "D": 210,
+            "A": 2146,
+            "B": 9409,
+            "C": 1035
+          },
+          "quadrant_gen4": {
+            "D": 653,
+            "A": 6388,
+            "B": 4461,
+            "C": 1298
+          }
+        },
+        "400": {
+          "source": {
+            "audiomcq": 23014,
+            "avqa": 2586
+          },
+          "gold_option_index": {
+            "1": 6417,
+            "2": 6332,
+            "0": 6500,
+            "3": 6351
+          },
+          "quadrant_gen0": {
+            "D": 439,
+            "A": 4334,
+            "B": 18722,
+            "C": 2105
+          },
+          "quadrant_gen4": {
+            "D": 1304,
+            "A": 12726,
+            "B": 8966,
+            "C": 2604
+          }
+        },
+        "600": {
+          "source": {
+            "audiomcq": 34561,
+            "avqa": 3839
+          },
+          "gold_option_index": {
+            "1": 9600,
+            "2": 9600,
+            "0": 9600,
+            "3": 9600
+          },
+          "quadrant_gen0": {
+            "D": 638,
+            "A": 6566,
+            "B": 28126,
+            "C": 3070
+          },
+          "quadrant_gen4": {
+            "D": 1920,
+            "A": 19200,
+            "B": 13440,
+            "C": 3840
+          }
+        }
+      }
+    },
+    {
+      "token": "merged_q4_s20260907",
+      "arm": "Q4",
+      "seed": 20260907,
+      "candidate": true,
+      "smoke": false,
+      "runtime": "/home/kaiyli/mellow_150m_best_ckpt_44p6522/stage3_generative_pool_v1/runtime_snapshot_v3",
+      "run_dir": "/mnt/ons_data/kaiyli/mellow_eval/stage3_merged_strong_avqa_v1/runs/merged_q4_s20260907",
+      "config": {
+        "path": "/mnt/ons_data/kaiyli/mellow_eval/stage3_merged_strong_avqa_v1/materialized/merged_q4_s20260907.yaml",
+        "sha256": "34aa92fc06520757e87cc61271630c4f69351246ce671c275570ad855a8ee27b",
+        "bytes": 5047
+      },
+      "manifest": {
+        "path": "/mnt/ons_data/kaiyli/mellow_eval/stage3_merged_strong_avqa_v1/materialized/merged_q4_s20260907.json",
+        "sha256": "6cb1780a50d6148e68e1cb8571759e2746d4d3f3b0e8935883a0045747c9a523",
+        "bytes": 64330726
+      },
+      "pretrain_freeze": {
+        "path": "/mnt/ons_data/kaiyli/mellow_eval/stage3_merged_strong_avqa_v1/FREEZE.json",
+        "sha256": "1d9ffa8e333f890697fc8fba475ce9e1c0423b4959fec7eca88649d2ab8625d9",
+        "bytes": 4284
+      },
+      "myconfig": "S3STRONG_MERGED_Q4_S20260907",
+      "expected_steps": 600,
+      "checkpoint_steps": [
+        100,
+        200,
+        400,
+        600
+      ],
+      "actual_exposures": {
+        "100": {
+          "source": {
+            "audiomcq": 5741,
+            "avqa": 659
+          },
+          "gold_option_index": {
+            "1": 1549,
+            "3": 1661,
+            "0": 1621,
+            "2": 1569
+          },
+          "quadrant_gen0": {
+            "A": 1135,
+            "B": 4665,
+            "C": 496,
+            "D": 104
+          },
+          "quadrant_gen4": {
+            "A": 3185,
+            "C": 652,
+            "B": 2263,
+            "D": 300
+          }
+        },
+        "200": {
+          "source": {
+            "audiomcq": 11482,
+            "avqa": 1318
+          },
+          "gold_option_index": {
+            "1": 3167,
+            "3": 3231,
+            "0": 3190,
+            "2": 3212
+          },
+          "quadrant_gen0": {
+            "A": 2248,
+            "B": 9364,
+            "C": 989,
+            "D": 199
+          },
+          "quadrant_gen4": {
+            "A": 6382,
+            "C": 1283,
+            "B": 4522,
+            "D": 613
+          }
+        },
+        "400": {
+          "source": {
+            "audiomcq": 22971,
+            "avqa": 2629
+          },
+          "gold_option_index": {
+            "1": 6392,
+            "3": 6417,
+            "0": 6379,
+            "2": 6412
+          },
+          "quadrant_gen0": {
+            "A": 4493,
+            "B": 18665,
+            "C": 2049,
+            "D": 393
+          },
+          "quadrant_gen4": {
+            "A": 12750,
+            "C": 2580,
+            "B": 9004,
+            "D": 1266
+          }
+        },
+        "600": {
+          "source": {
+            "audiomcq": 34480,
+            "avqa": 3920
+          },
+          "gold_option_index": {
+            "1": 9600,
+            "3": 9600,
+            "0": 9600,
+            "2": 9600
+          },
+          "quadrant_gen0": {
+            "A": 6712,
+            "B": 27991,
+            "C": 3089,
+            "D": 608
+          },
+          "quadrant_gen4": {
+            "A": 19200,
+            "C": 3840,
+            "B": 13440,
+            "D": 1920
+          }
+        }
+      }
+    },
+    {
+      "token": "merged_q4_s20260908",
+      "arm": "Q4",
+      "seed": 20260908,
+      "candidate": true,
+      "smoke": false,
+      "runtime": "/home/kaiyli/mellow_150m_best_ckpt_44p6522/stage3_generative_pool_v1/runtime_snapshot_v3",
+      "run_dir": "/mnt/ons_data/kaiyli/mellow_eval/stage3_merged_strong_avqa_v1/runs/merged_q4_s20260908",
+      "config": {
+        "path": "/mnt/ons_data/kaiyli/mellow_eval/stage3_merged_strong_avqa_v1/materialized/merged_q4_s20260908.yaml",
+        "sha256": "d7c499ff169c1d5f4dfc167282848ee3c2bc9d2985dfefac7598711268855f8b",
+        "bytes": 5047
+      },
+      "manifest": {
+        "path": "/mnt/ons_data/kaiyli/mellow_eval/stage3_merged_strong_avqa_v1/materialized/merged_q4_s20260908.json",
+        "sha256": "d588ee939fa66152cced4b639d28fc43eee21131db144f84a8216253d936e6cf",
+        "bytes": 64359896
+      },
+      "pretrain_freeze": {
+        "path": "/mnt/ons_data/kaiyli/mellow_eval/stage3_merged_strong_avqa_v1/FREEZE.json",
+        "sha256": "1d9ffa8e333f890697fc8fba475ce9e1c0423b4959fec7eca88649d2ab8625d9",
+        "bytes": 4284
+      },
+      "myconfig": "S3STRONG_MERGED_Q4_S20260908",
+      "expected_steps": 600,
+      "checkpoint_steps": [
+        100,
+        200,
+        400,
+        600
+      ],
+      "actual_exposures": {
+        "100": {
+          "source": {
+            "audiomcq": 5757,
+            "avqa": 643
+          },
+          "gold_option_index": {
+            "0": 1595,
+            "2": 1595,
+            "1": 1605,
+            "3": 1605
+          },
+          "quadrant_gen0": {
+            "B": 4650,
+            "D": 105,
+            "A": 1096,
+            "C": 549
+          },
+          "quadrant_gen4": {
+            "B": 2196,
+            "A": 3216,
+            "D": 334,
+            "C": 654
+          }
+        },
+        "200": {
+          "source": {
+            "audiomcq": 11508,
+            "avqa": 1292
+          },
+          "gold_option_index": {
+            "0": 3224,
+            "2": 3198,
+            "1": 3189,
+            "3": 3189
+          },
+          "quadrant_gen0": {
+            "B": 9326,
+            "D": 210,
+            "A": 2213,
+            "C": 1051
+          },
+          "quadrant_gen4": {
+            "B": 4462,
+            "A": 6387,
+            "D": 627,
+            "C": 1324
+          }
+        },
+        "400": {
+          "source": {
+            "audiomcq": 23059,
+            "avqa": 2541
+          },
+          "gold_option_index": {
+            "0": 6432,
+            "2": 6348,
+            "1": 6398,
+            "3": 6422
+          },
+          "quadrant_gen0": {
+            "B": 18719,
+            "D": 420,
+            "A": 4424,
+            "C": 2037
+          },
+          "quadrant_gen4": {
+            "B": 8981,
+            "A": 12729,
+            "D": 1306,
+            "C": 2584
+          }
+        },
+        "600": {
+          "source": {
+            "audiomcq": 34535,
+            "avqa": 3865
+          },
+          "gold_option_index": {
+            "0": 9600,
+            "2": 9600,
+            "1": 9600,
+            "3": 9600
+          },
+          "quadrant_gen0": {
+            "B": 28120,
+            "D": 619,
+            "A": 6615,
+            "C": 3046
+          },
+          "quadrant_gen4": {
+            "B": 13440,
+            "A": 19200,
+            "D": 1920,
+            "C": 3840
+          }
+        }
+      }
+    },
+    {
+      "token": "merged_q4_s20260909",
+      "arm": "Q4",
+      "seed": 20260909,
+      "candidate": true,
+      "smoke": false,
+      "runtime": "/home/kaiyli/mellow_150m_best_ckpt_44p6522/stage3_generative_pool_v1/runtime_snapshot_v3",
+      "run_dir": "/mnt/ons_data/kaiyli/mellow_eval/stage3_merged_strong_avqa_v1/runs/merged_q4_s20260909",
+      "config": {
+        "path": "/mnt/ons_data/kaiyli/mellow_eval/stage3_merged_strong_avqa_v1/materialized/merged_q4_s20260909.yaml",
+        "sha256": "05eee39dcd281998db55560a69a76b5c1aa4da0b130a2053681cbf696eaadf66",
+        "bytes": 5047
+      },
+      "manifest": {
+        "path": "/mnt/ons_data/kaiyli/mellow_eval/stage3_merged_strong_avqa_v1/materialized/merged_q4_s20260909.json",
+        "sha256": "b27f3b0d02f5e976a0b7ae9154d0a6b6f05a9af40aefe305382627a2ca9ccbfb",
+        "bytes": 64319719
+      },
+      "pretrain_freeze": {
+        "path": "/mnt/ons_data/kaiyli/mellow_eval/stage3_merged_strong_avqa_v1/FREEZE.json",
+        "sha256": "1d9ffa8e333f890697fc8fba475ce9e1c0423b4959fec7eca88649d2ab8625d9",
+        "bytes": 4284
+      },
+      "myconfig": "S3STRONG_MERGED_Q4_S20260909",
+      "expected_steps": 600,
+      "checkpoint_steps": [
+        100,
+        200,
+        400,
+        600
+      ],
+      "actual_exposures": {
+        "100": {
+          "source": {
+            "audiomcq": 5769,
+            "avqa": 631
+          },
+          "gold_option_index": {
+            "2": 1614,
+            "1": 1633,
+            "0": 1548,
+            "3": 1605
+          },
+          "quadrant_gen0": {
+            "B": 4636,
+            "A": 1142,
+            "C": 510,
+            "D": 112
+          },
+          "quadrant_gen4": {
+            "B": 2202,
+            "A": 3223,
+            "D": 337,
+            "C": 638
+          }
+        },
+        "200": {
+          "source": {
+            "audiomcq": 11529,
+            "avqa": 1271
+          },
+          "gold_option_index": {
+            "2": 3249,
+            "1": 3234,
+            "0": 3110,
+            "3": 3207
+          },
+          "quadrant_gen0": {
+            "B": 9348,
+            "A": 2230,
+            "C": 991,
+            "D": 231
+          },
+          "quadrant_gen4": {
+            "B": 4386,
+            "A": 6474,
+            "D": 664,
+            "C": 1276
+          }
+        },
+        "400": {
+          "source": {
+            "audiomcq": 23069,
+            "avqa": 2531
+          },
+          "gold_option_index": {
+            "2": 6454,
+            "1": 6390,
+            "0": 6330,
+            "3": 6426
+          },
+          "quadrant_gen0": {
+            "B": 18731,
+            "A": 4436,
+            "C": 2023,
+            "D": 410
+          },
+          "quadrant_gen4": {
+            "B": 8931,
+            "A": 12851,
+            "D": 1279,
+            "C": 2539
+          }
+        },
+        "600": {
+          "source": {
+            "audiomcq": 34615,
+            "avqa": 3785
+          },
+          "gold_option_index": {
+            "2": 9600,
+            "1": 9600,
+            "0": 9600,
+            "3": 9600
+          },
+          "quadrant_gen0": {
+            "B": 28089,
+            "A": 6632,
+            "C": 3078,
+            "D": 601
+          },
+          "quadrant_gen4": {
+            "B": 13440,
+            "A": 19200,
+            "D": 1920,
+            "C": 3840
+          }
+        }
+      }
+    }
+  ],
+  "raw_audio_receipt": {
+    "all_original_identities_preserved": true,
+    "answer_eos_added_by_loader": true,
+    "audio_hash_scope": "Historical canonical union guards are inherited. Raw waveform hashes are not re-labeled from old AVQA chunk hashes; no new exhaustive overlap claim.",
+    "audio_protocol": "Read original recording; mono/resample32k; truncate/pad first20s to640000.",
+    "avqa_mapping_source": {
+      "bytes": 114681631,
+      "path": "/mnt/ons_data/kaiyli/mellow_eval/audio_alignkd_rounds/round_03/data_prep/20260730_avqa_direct_ce_v1/manifest/avqa_sound_both39293_ce_mellow.json",
+      "sha256": "682d9f335cf26c2b96c4294dac6ad581f78414edafcb3deea4ec2728337a645c"
+    },
+    "avqa_remapping": {
+      "bytes": 24728753,
+      "path": "/mnt/ons_data/kaiyli/mellow_eval/paper_table14_20260906_v1/inputs/A2_AVQA_RAW_MAPPING.json",
+      "sha256": "27691dcc6f3332742d03f7d309b701463ca7362f991d0d1806de6693c36cbe07"
+    },
+    "avqa_rows_exact_chunk_pair_to_raw": 33875,
+    "intended_consumers": [
+      "P2 paired manifests",
+      "P3 old-S2 sampler reconstruction",
+      "fixed-CED mapper full A2 manifest"
+    ],
+    "manifest": {
+      "bytes": 364696419,
+      "path": "/mnt/ons_data/kaiyli/mellow_eval/paper_table14_20260906_v1/inputs/A2_RAW_DIRECT.json",
+      "sha256": "c4b1862f58148d2728dfad10ee8346974924badca6de6b82181ffe605225cc65"
+    },
+    "new_inference_or_training_performed": false,
+    "old_option_scores_or_labels_used": false,
+    "original_id_order_sha256": "90bdf2d33f81fc65668adcedb13d7f8f0ede7724f4f4f90b93e854c83a6e662d",
+    "output_id_order_sha256": "90bdf2d33f81fc65668adcedb13d7f8f0ede7724f4f4f90b93e854c83a6e662d",
+    "payload_allowlist": [
+      "answer",
+      "audio_input_contract",
+      "choices",
+      "filepath1",
+      "filepath2",
+      "gold_choice",
+      "gold_letter",
+      "gold_option_index",
+      "id",
+      "input",
+      "prompt_contract",
+      "question",
+      "sample_key",
+      "schema_version",
+      "source",
+      "source_dataset",
+      "source_sample_key",
+      "target_format",
+      "training_original_sample_key"
+    ],
+    "question_eot_absent": true,
+    "rows": 289952,
+    "same_original_id_order": true,
+    "script": {
+      "bytes": 32600,
+      "path": "/home/kaiyli/mellow_150m_best_ckpt_44p6522/paper/experiments_20260906_table14_v1/p2_avqa/prepare.py",
+      "sha256": "ab160cbf6f068d0b84bafa4dff892940c77906282f0f38af7b8b45c9e7dfca2d"
+    },
+    "source_counts": {
+      "audiomcq": 256077,
+      "avqa": 33875
+    },
+    "source_manifest": {
+      "bytes": 432692115,
+      "path": "/mnt/ons_data/kaiyli/mellow_eval/v4_phase_s2_ac_direct_lr4_pilot_v1/data/A2_direct_identity_preserved.json",
+      "sha256": "bbe451927543a389c7f4e749cde1f728a139709e499b13debcab3c52ce3fb60e"
+    },
+    "status": "PASS_SHARED_A2_IDENTITY_PRESERVING_RAW_DIRECT",
+    "text_and_file_gate": {
+      "answer_eos_length_histogram": {
+        "5": 19078,
+        "6": 16855,
+        "7": 37340,
+        "8": 48464,
+        "9": 62838,
+        "10": 49630,
+        "11": 25732,
+        "12": 14716,
+        "13": 7243,
+        "14": 3715,
+        "15": 1902,
+        "16": 1049,
+        "17": 572,
+        "18": 286,
+        "19": 174,
+        "20": 122,
+        "21": 80,
+        "22": 56,
+        "23": 32,
+        "24": 25,
+        "25": 19,
+        "26": 7,
+        "27": 8,
+        "28": 4,
+        "29": 1,
+        "30": 2,
+        "37": 1,
+        "45": 1
+      },
+      "answer_eos_tokens_max": 45,
+      "input_length_histogram": {
+        "19": 25,
+        "20": 174,
+        "21": 165,
+        "22": 170,
+        "23": 339,
+        "24": 621,
+        "25": 4536,
+        "26": 5793,
+        "27": 4686,
+        "28": 6256,
+        "29": 8320,
+        "30": 9306,
+        "31": 9581,
+        "32": 10350,
+        "33": 10567,
+        "34": 12218,
+        "35": 12845,
+        "36": 13673,
+        "37": 13593,
+        "38": 14482,
+        "39": 16016,
+        "40": 15443,
+        "41": 14379,
+        "42": 14005,
+        "43": 13810,
+        "44": 12564,
+        "45": 10652,
+        "46": 8841,
+        "47": 7835,
+        "48": 6404,
+        "49": 5616,
+        "50": 4700,
+        "51": 3871,
+        "52": 3217,
+        "53": 2691,
+        "54": 2134,
+        "55": 1760,
+        "56": 1426,
+        "57": 1165,
+        "58": 975,
+        "59": 724,
+        "60": 630,
+        "61": 509,
+        "62": 417,
+        "63": 357,
+        "64": 323,
+        "65": 264,
+        "66": 188,
+        "67": 158,
+        "68": 153,
+        "69": 145,
+        "70": 107,
+        "71": 85,
+        "72": 75,
+        "73": 68,
+        "74": 54,
+        "75": 47,
+        "76": 35,
+        "77": 33,
+        "78": 31,
+        "79": 28,
+        "80": 21,
+        "81": 29,
+        "82": 18,
+        "83": 27,
+        "84": 19,
+        "85": 21,
+        "86": 23,
+        "87": 22,
+        "88": 21,
+        "89": 26,
+        "90": 22,
+        "91": 12,
+        "92": 10,
+        "93": 10,
+        "94": 5,
+        "95": 3,
+        "96": 6,
+        "97": 3,
+        "98": 2,
+        "99": 1,
+        "100": 1,
+        "101": 1,
+        "102": 3,
+        "103": 2,
+        "104": 1,
+        "108": 1,
+        "109": 2,
+        "112": 1,
+        "115": 1,
+        "119": 1,
+        "126": 1,
+        "128": 1
+      },
+      "input_tokens_max": 128,
+      "rows": 289952,
+      "unique_existing_raw_files": 262424,
+      "violations": 0
+    }
+  }
+}

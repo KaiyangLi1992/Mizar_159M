@@ -1,0 +1,188 @@
+{
+  "schema_version": "mizar_repro_artifacts_v1",
+  "generated_utc": "2026-09-09T16:38:15Z",
+  "notes": [
+    "Paths are the canonical internal locations used by the executed runs.",
+    "Large manifests, audio, caches, and checkpoints are not committed to GitLab.",
+    "A SHA-256 match establishes exact artifact identity; a regenerated artifact is only a method replication unless it matches.",
+    "runtime/stage1, stage2, and stage3 each contain a byte-identical 41-file training subset; the executed_runtime records below identify the larger original Python closures."
+  ],
+  "s1": {
+    "manifest": {
+      "asset_key": "s1_manifest",
+      "path": "/mnt/ons_data/kaiyli/mellow_eval/audiomcq_stageF2/datafiles/F2_full_mellowfmt_cot150k_train.json",
+      "bytes": 1501923979,
+      "rows": 1477976,
+      "sha256": "de92b7efd1dd6b5fd30b3f62c31639a3bcff6766a088849658fdd6bc8520641d"
+    },
+    "executed_config": {
+      "path": "/home/kaiyli/mellow_eval/stage1_rigorous_v1_round1_pending_ckpts/stage1_rigorous_v1_S1-T3_screen_seed1234/2026-08-12_07-42-15/conf.yaml",
+      "bytes": 3547,
+      "sha256": "a248b7477b81e6a6793cab4b7a351759339ff00f25f90014d8b806ab1f491816"
+    },
+    "adopted_checkpoint": {
+      "asset_key": "s1_checkpoint",
+      "path": "/home/kaiyli/mellow_eval/stage1_rigorous_v1_round1_pending_ckpts/stage1_rigorous_v1_S1-T3_screen_seed1234/2026-08-12_07-42-15/model-STAGE1_RIGOROUS_V1_S1T3_SCREEN_S1234--epo-3.ckpt",
+      "bytes": 637468968,
+      "sha256": "7e1fd8dedfb3598ca2593729c76285462fda12bb88e3b2bfcf8011304feb5c79"
+    },
+    "executed_runtime": {
+      "path": "/home/kaiyli/mellow_150m_best_ckpt_44p6522/stage1_rigorous_matrix_v1/materialized/screen/runtime_snapshot",
+      "python_files": 92,
+      "tree_sha256": "5bd7234cee5dcee4234fd3c34f2a4414d14542295d2acbac8e0fb1c21a254a45"
+    }
+  },
+  "s2": {
+    "manifest": {
+      "asset_key": "s2_manifest",
+      "path": "/mnt/ons_data/kaiyli/mellow_eval/v4_phase_s2_ac_direct_lr4_pilot_v1/data/A2_direct_identity_preserved.json",
+      "bytes": 432692115,
+      "rows": 289952,
+      "sha256": "bbe451927543a389c7f4e749cde1f728a139709e499b13debcab3c52ce3fb60e"
+    },
+    "executed_config": {
+      "path": "/mnt/ons_data/kaiyli/mellow_eval/v4_phase_s2_ac_direct_lr4_pilot_v1/runs/S2ACD_A2_LR200/lineage-a2direct-lr200-seed20260904-v1/2026-09-04_15-20-42/conf.yaml",
+      "bytes": 6827,
+      "sha256": "0dda30cbc8eba5568e443cfd0eba7768e5b477a18a816991a96a808648518f78"
+    },
+    "adopted_checkpoint": {
+      "asset_key": "s2_checkpoint",
+      "path": "/mnt/ons_data/kaiyli/mellow_eval/v4_phase_s2_ac_direct_lr4_pilot_v1/runs/S2ACD_A2_LR200/lineage-a2direct-lr200-seed20260904-v1/2026-09-04_15-20-42/model-S2ACD_A2_LR200--optstep-000906.ckpt",
+      "bytes": 637462632,
+      "sha256": "2b532a55433f88ae0fd3190b72200bfeb6bc798e7e28d5a9399fe3a2e985f9d5"
+    },
+    "executed_runtime": {
+      "path": "/home/kaiyli/mellow_150m_best_ckpt_44p6522/stage3_quadrant_v1/runtime_snapshot",
+      "python_files": 155,
+      "tree_sha256": "b2a34b9d458e9b4272db2bb678e9bb07f7b8e3c90251a7b601630769b8b01b36"
+    }
+  },
+  "q4_labels": {
+    "path": "data/q4/labels_gen0_gen4.executed.json.gz",
+    "bytes": 14588398,
+    "rows": 256077,
+    "uncompressed_bytes": 150878218,
+    "sha256": "bc478621f36e5cd8e3c44dfd32ac60d1bf62807ae3dc819b017be99240db4137"
+  },
+  "s3_q4": {
+    "executed_runtime": {
+      "path": "/home/kaiyli/mellow_150m_best_ckpt_44p6522/stage3_generative_pool_v1/runtime_snapshot_v3",
+      "python_files": 155,
+      "tree_sha256": "74f4dcc7bd425ad81528d4120a08615646aa87ab1006ae819d744cb05e6595db"
+    },
+    "manifests": {
+      "20260905": {
+        "asset_key": "s3_q4_manifests.20260905",
+        "bytes": 80120064,
+        "rows": 38400,
+        "sha256": "e8431cfef15767481ff1bdb716df0580512cdbbd1bbedf74e547eeb554c4d2d3"
+      },
+      "20260906": {
+        "asset_key": "s3_q4_manifests.20260906",
+        "bytes": 80162470,
+        "rows": 38400,
+        "sha256": "4fee166c74a451ff688896b1aa9909641319029767b4302631e633d7c48c8405"
+      },
+      "20260907": {
+        "asset_key": "s3_q4_manifests.20260907",
+        "bytes": 80145966,
+        "rows": 38400,
+        "sha256": "f05146aef8514f53893d0aae4040bf9c88e03879960c364c4afc33ea8de3d5d6"
+      },
+      "20260908": {
+        "asset_key": "s3_q4_manifests.20260908",
+        "bytes": 80172013,
+        "rows": 38400,
+        "sha256": "90b537fcc3b36fc149b5c789deb5a842855dbb5513a8fe11e94542f913fad92f"
+      },
+      "20260909": {
+        "asset_key": "s3_q4_manifests.20260909",
+        "bytes": 80161276,
+        "rows": 38400,
+        "sha256": "a83dbe4fee256b8a920fca8b7c5b9e5aaa63a86ab26cec216c39c78706691c1d"
+      }
+    },
+    "step200_checkpoints": {
+      "20260905": {
+        "bytes": 1740812685,
+        "sha256": "8c0664bcb480bb6a4e711bb130413338d4b3bfa4b825c1ccc1967d5f35206f6a"
+      },
+      "20260906": {
+        "bytes": 1740812685,
+        "sha256": "3915f6e714bf650e585250d198c31e9047589d3466326733a08ac64dd346bbb8"
+      },
+      "20260907": {
+        "bytes": 1740812685,
+        "sha256": "0c16ecd387d0e915c94fd3b281c8608b49a925881f45a96c60f305c0e4162af2"
+      },
+      "20260908": {
+        "bytes": 1740812685,
+        "sha256": "b30a494aa18c897f0d9a7e58491cff749e4aff6cedb46f865ffca4107b2070df"
+      },
+      "20260909": {
+        "bytes": 1740812749,
+        "sha256": "7b80a5ab89783c60da7d462cbd9a32fd724ec1521975658e21f7f855b51cdc89"
+      }
+    }
+  },
+  "teacher": {
+    "asset_key": "teacher_model",
+    "model_id": "inclusionAI/AudioMCQ-Mixed-To-Strong",
+    "revision": "1405063d68760b17c705b38a8fc6633a47bf68df",
+    "model_tree_sha256": "fd4f240e5520514f4e9701d6195e1aabad752807751e97e1a58289f244b1f25b"
+  },
+  "evaluation": {
+    "mmau_mini_official": {
+      "asset_key": "evaluation.mmau_mini_official",
+      "bytes": 591718,
+      "rows": 1000,
+      "sha256": "e98506f0d5b6e789c65f3fc3420c77b9624c268fcd8273082d080783c302baf4"
+    },
+    "mmau_full9k_model_input": {
+      "asset_key": "evaluation.mmau_full9k_model_input",
+      "bytes": 6318589,
+      "rows": 9000,
+      "sha256": "589e8f0b4bd3c54c126ed0088ade5d0ca2390e22fb8efdb8e0ed3a8ea3164805"
+    },
+    "mmau_full9k_official_input": {
+      "asset_key": "evaluation.mmau_full9k_official_input",
+      "bytes": 4050083,
+      "rows": 9000,
+      "sha256": "950e60fdbd8c0ecaf05df8bd227b74b1a94375f0ad1bb7165f59be2f9e894bb2"
+    },
+    "mmar_model_input": {
+      "asset_key": "evaluation.mmar_model_input",
+      "bytes": 791672,
+      "rows": 1000,
+      "sha256": "7b1912ec6a139d302f82963190a90c8753d41498a937909a33a227a606bfb00d"
+    },
+    "mmar_official_evaluator": {
+      "asset_key": "evaluation.mmar_official_evaluator",
+      "bytes": 4755,
+      "sha256": "a3c57b829e40e67e3f7f0bbe7d54a112ea06ed7a781534241ecc5d3751486198"
+    },
+    "adqa_model_input": {
+      "asset_key": "evaluation.adqa_model_input",
+      "bytes": 1136658,
+      "rows": 1607,
+      "sha256": "c8cc8bd275742e179aa0702941058ebbfc1c24bf892524072ef065580bc6a64a"
+    },
+    "adqa_ground_truth": {
+      "asset_key": "evaluation.adqa_ground_truth",
+      "bytes": 487336,
+      "rows": 1607,
+      "sha256": "19b6d738105700101723e875102aac5515eb5052c7a267fcc1a54f11acb16f21"
+    },
+    "adqa_official_evaluator": {
+      "asset_key": "evaluation.adqa_official_evaluator",
+      "bytes": 7281,
+      "sha256": "bd3e690ed5f727a38ef636b58340481b88f04d4171ccf5707074a78ac0dd9fd4"
+    },
+    "adqa_clean_ids": {
+      "asset_key": "evaluation.adqa_clean_ids",
+      "bytes": 23080,
+      "rows": 1577,
+      "sha256": "22af08483312ba803bcd8c27c69becf901202846d60acf6b52425e3881b2cf0a"
+    }
+  }
+}

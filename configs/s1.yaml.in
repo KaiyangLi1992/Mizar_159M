@@ -1,0 +1,123 @@
+mode: train
+gpu: true
+resume_checkpoint: ''
+myconfig: STAGE1_RIGOROUS_V1_S1T3_SCREEN_S1234
+exclude_bias_bn_from_weight_decay: true
+data:
+  datapath: /
+  datafiles:
+  - '{{S1_MANIFEST}}'
+  sampling_rate: 32000
+  segment_seconds: 10
+  audio_length_policy: fixed
+  tokenizer_type: '{{SMOLLM2_135M}}'
+  op_text_len: 300
+  ip_text_len: 256
+  single_audio_compatibility_hack: false
+  single20_eval_from_raw: true
+  order:
+    shuffle: true
+    seed: 1234
+    sampler_seed: 1234
+    rule: stage1_rigorous_v1_screen_seed1234
+  ced_hidden_cache:
+    root: '{{S1_CED_CACHE}}'
+    policy: fixed20
+    cache_point: final_hidden
+    strict: false
+  drop_last: true
+model:
+  model_variant: legacy
+  encoder:
+    audioenc_name: CEDSmall
+    transformer_embed_dim: 384
+    out_emb: 384
+    d_proj: 576
+    use_pretrained_audioencoder: true
+    freeze_audio_encoder_weights: true
+    pretrained_audioencoder_path: mispeech/ced-small
+    hf_cache_dir: '{{HF_CACHE}}'
+    input_sampling_rate: 32000
+    ced_sampling_rate: 16000
+    ced_mapper: freq_merge_126
+    ced_output_tokens: 126
+    ced_mapper_dropout: 0.05
+    ced_variable_length: false
+    ced_resampler_layers: 2
+    ced_resampler_heads: 8
+  decoder:
+    text_decoder: '{{SMOLLM2_135M}}'
+    prefix_length: 40
+    total_prefix_length: 383
+    freeze_gpt_weights: false
+    prefix_layout: single_audio
+    use_chunk_position_embeddings: false
+  adapter:
+    enabled: false
+    type: one_pass_residual
+    train_map: false
+  model_type: Mellow
+  input_channels: 1
+  output_channels: 1
+  resume_checkpoint: ''
+  inference_window: 5
+  generation_max_length: 300
+train:
+  optimizer:
+    optimizer_type: AdamW
+    learning_rate: 0.0003
+    lr_adapter: 0.0006
+    lr_map: 0.0006
+    warm_up_steps: 0
+    reduce_lr_steps: 1000000
+    weight_decay: 0.01
+    scheduler: warmup_cosine
+    warmup_ratio: 0.05
+    min_lr: 2.9999999999999997e-05
+    discriminative_lrs: true
+    schedule_total_optimizer_steps: 138558
+  max_grad_norm: 1.0
+  emergency_stop_grad_norm: 1000000.0
+  num_nodes: 1
+  num_workers: 0
+  persistent_data_workers: false
+  loss_type: lm
+  sync_batchnorm: false
+  batch_size: 8
+  num_epochs: 3
+  log_step: 25
+  sav_per_num_epochs: 1
+  random_seed: 1234
+  mixed_precision:
+    use_mixed_precision: true
+    mixed_precision_dtype: float16
+  world_size: 4
+  gradient_accumulation_steps: 1
+  max_optimizer_updates: 138558
+  checkpoint_optimizer_steps: &id001
+  - 23093
+  - 46186
+  - 69279
+  - 92372
+  - 115465
+  - 138558
+  checkpoint_name_by_optimizer_step: true
+  checkpoint_interval_fraction: 0.0
+experiment_notes:
+  matrix_id: stage1_rigorous_v1
+  arm_id: S1-T3
+  phase: screen
+  seed: 1234
+  role: mapper_2x
+  formal_status: TRAIN_ONLY_UNEVALUATED
+  encoder: CED-Small frozen
+  target: 150K CoT + final answer
+  audio_interface: 20s fixed20 hidden -> freq_merge_126 -> single_audio
+  decoder_lr: 0.0003
+  mapper_lr: 0.0006
+  global_batch_size: 32
+  steps_per_epoch: 46186
+  checkpoint_optimizer_steps: *id001
+  evaluation_submitted: false
+  release_note: Historical S1 execution included 150k rationale views; S2 and S3 are
+    direct-answer CE.

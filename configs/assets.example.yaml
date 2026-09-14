@@ -1,0 +1,30 @@
+hf_cache: /path/to/huggingface/cache
+smollm2_135m: /path/to/HuggingFaceTB/SmolLM2-135M
+s1_manifest: /path/to/F2_full_mellowfmt_cot150k_train.json
+s1_ced_cache: /path/to/s1/fixed20_final_hidden_cache
+s1_checkpoint: /path/to/model-STAGE1_RIGOROUS_V1_S1T3_SCREEN_S1234--epo-3.ckpt
+s2_manifest: /path/to/A2_direct_identity_preserved.json
+s2_ced_cache_roots:
+- /path/to/s2/cache/root0
+- /path/to/s2/cache/root1
+- /path/to/s2/cache/root2
+- /path/to/s2/cache/root3
+s2_checkpoint: /path/to/model-S2ACD_A2_LR200--optstep-000906.ckpt
+s3_q4_manifests:
+  20260905: /path/to/q4_s20260905.train.json
+  20260906: /path/to/q4_s20260906.train.json
+  20260907: /path/to/q4_s20260907.train.json
+  20260908: /path/to/q4_s20260908.train.json
+  20260909: /path/to/q4_s20260909.train.json
+teacher_model: /path/to/inclusionAI/AudioMCQ-Mixed-To-Strong
+evaluation:
+  mmau_mini_official: /path/to/mmau_test_mini_official.json
+  mmau_full9k_model_input: /path/to/mmau_test9k_mellow.json
+  mmau_full9k_official_input: /path/to/mmau_test9k_official.json
+  mmar_model_input: /path/to/mmar_mellow.json
+  mmar_official_evaluator: /path/to/MMAR/code/evaluation.py
+  adqa_model_input: /path/to/ADQA_dev/dev_mellow.json
+  adqa_ground_truth: /path/to/ADQA_dev/dev.jsonl
+  adqa_official_evaluator: /path/to/ADQA/evaluate_adqa.py
+  adqa_clean_ids: /path/to/ADQA_DEV_CLEAN_V1.json
+s3_candidates: /path/to/A2_RAW_DIRECT.json

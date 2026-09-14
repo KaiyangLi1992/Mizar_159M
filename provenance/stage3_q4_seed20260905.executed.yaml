@@ -1,0 +1,167 @@
+mode: train
+gpu: true
+resume_checkpoint: /mnt/ons_data/kaiyli/mellow_eval/v4_phase_s2_ac_direct_lr4_pilot_v1/runs/S2ACD_A2_LR200/lineage-a2direct-lr200-seed20260904-v1/2026-09-04_15-20-42/model-S2ACD_A2_LR200--optstep-000906.ckpt
+myconfig: S3STRONG_MERGED_Q4_S20260905
+exclude_bias_bn_from_weight_decay: true
+data:
+  datapath: /
+  datafiles:
+  - /mnt/ons_data/kaiyli/mellow_eval/stage3_merged_strong_avqa_v1/materialized/merged_q4_s20260905.json
+  manifest_sha256: ea3467760ac923a4c23f30eda6ab0a32cbbd7faf888702a9493944479622891e
+  sampling_rate: 32000
+  segment_seconds: 10
+  audio_length_policy: fixed
+  audio_mode: normal
+  tokenizer_type: /home/kaiyli/mellow_eval/hf_cache/hub/models--HuggingFaceTB--SmolLM2-135M/snapshots/93efa2f097d58c2a74874c7e644dbc9b0cee75a2
+  ip_text_len: 256
+  op_text_len: 96
+  single_audio_compatibility_hack: false
+  single20_eval_from_raw: true
+  drop_last: true
+  mixture:
+    enabled: false
+  order:
+    shuffle: false
+    sampler_shuffle: false
+    seed: 20260905
+    sampler_seed: 20260905
+    rule: strong_dual_rank_major_frozen_logical_global_batches_v1
+model:
+  model_variant: legacy
+  encoder:
+    audioenc_name: CEDSmall
+    transformer_embed_dim: 384
+    out_emb: 384
+    d_proj: 576
+    use_pretrained_audioencoder: true
+    freeze_audio_encoder_weights: true
+    pretrained_audioencoder_path: mispeech/ced-small
+    hf_cache_dir: /home/kaiyli/mellow_eval/hf_cache
+    input_sampling_rate: 32000
+    ced_sampling_rate: 16000
+    ced_mapper: freq_merge_126
+    ced_output_tokens: 126
+    ced_mapper_dropout: 0.05
+    ced_variable_length: false
+    ced_resampler_layers: 2
+    ced_resampler_heads: 8
+    ced_hidden_cache_point: final_hidden
+    ced_finetune_last_n_layers: 0
+  decoder:
+    text_decoder: /home/kaiyli/mellow_eval/hf_cache/hub/models--HuggingFaceTB--SmolLM2-135M/snapshots/93efa2f097d58c2a74874c7e644dbc9b0cee75a2
+    prefix_length: 40
+    total_prefix_length: 383
+    freeze_gpt_weights: false
+    prefix_layout: single_audio
+    use_chunk_position_embeddings: false
+    align_kd:
+      enabled: false
+      attention_enabled: false
+      target_audio_tokens: 126
+    lora:
+      enabled: false
+      r: 16
+      alpha: 32
+      target_modules:
+      - q_proj
+      - k_proj
+      - v_proj
+      - o_proj
+      - gate_proj
+      - up_proj
+      - down_proj
+      dropout: 0.0
+      bias: none
+    gradient_checkpointing: true
+  adapter:
+    enabled: false
+    type: one_pass_residual
+    train_map: false
+  model_type: Mellow
+  input_channels: 1
+  output_channels: 1
+  resume_checkpoint: /mnt/ons_data/kaiyli/mellow_eval/v4_phase_s2_ac_direct_lr4_pilot_v1/runs/S2ACD_A2_LR200/lineage-a2direct-lr200-seed20260904-v1/2026-09-04_15-20-42/model-S2ACD_A2_LR200--optstep-000906.ckpt
+  inference_window: 5
+  generation_max_length: 96
+train:
+  optimizer:
+    optimizer_type: AdamW
+    learning_rate: 5.0e-06
+    lr_map: 2.0e-06
+    lr_adapter: 5.0e-06
+    lr_ced: 5.0e-06
+    lr_lora: 5.0e-06
+    weight_decay: 0.01
+    discriminative_lrs: true
+    scheduler: warmup_cosine
+    warm_up_steps: 0
+    warmup_steps: 18
+    warmup_ratio: 0.03
+    reduce_lr_steps: 1000000
+    min_lr: 5.0e-07
+    schedule_total_optimizer_steps: 600
+    allow_schedule_horizon_beyond_run: false
+  max_grad_norm: 1.0
+  emergency_stop_grad_norm: 1000000.0
+  num_nodes: 1
+  world_size: 2
+  num_workers: 4
+  persistent_data_workers: false
+  loss_type: lm
+  sync_batchnorm: false
+  batch_size: 32
+  num_epochs: 1
+  log_step: 10
+  sav_per_num_epochs: 2
+  random_seed: 20260905
+  data_order_seed: 20260905
+  mixed_precision:
+    use_mixed_precision: true
+    mixed_precision_dtype: bfloat16
+  max_train_fraction: 0.0
+  checkpoint_interval_fraction: 0.0
+  max_train_batches: 0
+  max_optimizer_updates: 600
+  gradient_accumulation_steps: 1
+  checkpoint_optimizer_steps:
+  - 100
+  - 200
+  - 400
+  - 600
+  checkpoint_name_by_optimizer_step: true
+  resume_branch: stage2_to_strong_dual_fresh_optimizer_v1
+  masked_kd:
+    enabled: false
+  kd_gradient_probe:
+    enabled: false
+  naive_kd:
+    enabled: false
+  align_kd:
+    enabled: false
+  retention_kd:
+    enabled: false
+  output_control_warmup:
+    enabled: false
+  sequence_retention_kd:
+    enabled: false
+  pair_kd:
+    enabled: false
+  abc_replay_objective:
+    enabled: false
+checkpoint_path: ''
+experiment_notes:
+  matrix_id: stage3_merged_strong_avqa_v1
+  token: merged_q4_s20260905
+  seed: 20260905
+  candidate: true
+  input_contract: lowercase_no_question_eot_answer_eos_benchmark_first20_raw
+  objective: ordinary_token_mean_CE_no_KD_no_quadrant_loss_weights
+  test_exposure: EXPLORATORY_TEST_EXPOSED
+  selection: fixed_step200_primary; mini all four checkpoints; no test selection
+  global_batch: 64
+  plan: /home/kaiyli/mellow_150m_best_ckpt_44p6522/docs/STAGE3_STRONG_DUAL_ROUND_PREREG_CN.md
+  manifest: /mnt/ons_data/kaiyli/mellow_eval/stage3_merged_strong_avqa_v1/materialized/merged_q4_s20260905.json
+  manifest_sha256: ea3467760ac923a4c23f30eda6ab0a32cbbd7faf888702a9493944479622891e
+  primary_step: 200
+  reference_reused: true
+mixed_precision_dtype: bfloat16

@@ -1,0 +1,4 @@
+# Preserve source formatting in runtime snapshots and SHA-bound official evaluators.
+# Portability changes are recorded in provenance/release_patches.json.
+runtime/** whitespace=-blank-at-eol,-blank-at-eof
+data/evaluation/*evaluator.py whitespace=-blank-at-eol,-blank-at-eof

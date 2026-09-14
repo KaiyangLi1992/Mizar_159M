@@ -1,0 +1,68 @@
+# --- large / regenerable data ---
+legacy_smoke/
+cache/
+data/raw/
+data/prepared/
+data/manifests/*.json
+data/manifests/*.jsonl
+!data/q4/labels_gen0_gen4.executed.json.gz
+*.ckpt
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.parquet
+*.tar
+*.tar.gz
+*.zip
+
+# --- external repo (cloned during setup, re-clone with the README steps) ---
+mellow/
+
+# --- run logs ---
+logs/
+*.log
+resolved_configs/
+runs/
+eval_outputs/
+
+# --- python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# --- editor / OS ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- secrets ---
+.env
+.env.*
+*.pem
+*.key
+
+# --- audio extracted from datasets at runtime (large) ---
+*.wav
+
+# Downloaded HF assets and local path configuration
+assets/ced-small/
+assets/smollm2-135m/
+data/manifests/
+configs/assets.local.yaml
+configs/audio_paths.local.json
+.cache/

@@ -1,0 +1,166 @@
+mode: train
+gpu: true
+resume_checkpoint: '{{S1_CHECKPOINT}}'
+myconfig: S2ACD_A2_LR200
+exclude_bias_bn_from_weight_decay: true
+data:
+  datapath: /
+  datafiles:
+  - '{{S2_MANIFEST}}'
+  sampling_rate: 32000
+  segment_seconds: 10
+  audio_length_policy: fixed
+  tokenizer_type: '{{SMOLLM2_135M}}'
+  op_text_len: 96
+  ip_text_len: 256
+  single_audio_compatibility_hack: false
+  single20_eval_from_raw: true
+  order:
+    shuffle: false
+    sampler_shuffle: true
+    seed: 20260904
+    sampler_seed: 20260904
+    rule: a2_direct_identity_preserved_ddp_shuffle_v1
+  ced_hidden_cache:
+    roots:
+    - '{{S2_CED_CACHE_0}}'
+    - '{{S2_CED_CACHE_1}}'
+    - '{{S2_CED_CACHE_2}}'
+    - '{{S2_CED_CACHE_3}}'
+    strict: true
+    policy: fixed20
+    cache_point: final_hidden
+  manifest_sha256: bbe451927543a389c7f4e749cde1f728a139709e499b13debcab3c52ce3fb60e
+  drop_last: true
+  mixture:
+    enabled: false
+model:
+  model_variant: legacy
+  encoder:
+    audioenc_name: CEDSmall
+    transformer_embed_dim: 384
+    out_emb: 384
+    d_proj: 576
+    use_pretrained_audioencoder: true
+    freeze_audio_encoder_weights: true
+    pretrained_audioencoder_path: mispeech/ced-small
+    hf_cache_dir: '{{HF_CACHE}}'
+    input_sampling_rate: 32000
+    ced_sampling_rate: 16000
+    ced_mapper: freq_merge_126
+    ced_output_tokens: 126
+    ced_mapper_dropout: 0.05
+    ced_variable_length: false
+    ced_resampler_layers: 2
+    ced_resampler_heads: 8
+    ced_hidden_cache_point: final_hidden
+    ced_finetune_last_n_layers: 0
+  decoder:
+    text_decoder: '{{SMOLLM2_135M}}'
+    prefix_length: 40
+    total_prefix_length: 383
+    freeze_gpt_weights: false
+    prefix_layout: single_audio
+    use_chunk_position_embeddings: false
+    align_kd:
+      enabled: false
+      attention_enabled: false
+      target_audio_tokens: 126
+    lora:
+      enabled: false
+      r: 16
+      alpha: 32
+      target_modules:
+      - q_proj
+      - k_proj
+      - v_proj
+      - o_proj
+      - gate_proj
+      - up_proj
+      - down_proj
+      dropout: 0.0
+      bias: none
+    gradient_checkpointing: true
+  adapter:
+    enabled: false
+    type: one_pass_residual
+    train_map: false
+  model_type: Mellow
+  input_channels: 1
+  output_channels: 1
+  resume_checkpoint: '{{S1_CHECKPOINT}}'
+  inference_window: 5
+  generation_max_length: 96
+train:
+  optimizer:
+    optimizer_type: AdamW
+    learning_rate: 2.0e-05
+    lr_adapter: 4.0e-05
+    lr_map: 8.0e-06
+    lr_lora: 4.0e-05
+    lr_ced: 4.0e-05
+    warm_up_steps: 0
+    reduce_lr_steps: 1000000
+    weight_decay: 0.01
+    scheduler: warmup_cosine
+    warmup_ratio: 0.03
+    min_lr: 2.0000000000000003e-06
+    discriminative_lrs: true
+    schedule_total_optimizer_steps: 4530
+    warmup_steps: 136
+    allow_schedule_horizon_beyond_run: false
+  max_grad_norm: 1.0
+  emergency_stop_grad_norm: 1000000.0
+  num_nodes: 1
+  num_workers: 0
+  persistent_data_workers: false
+  loss_type: lm
+  sync_batchnorm: false
+  batch_size: 32
+  num_epochs: 1
+  log_step: 10
+  sav_per_num_epochs: 1
+  random_seed: 20260904
+  mixed_precision:
+    use_mixed_precision: true
+    mixed_precision_dtype: bfloat16
+  max_train_fraction: 0.0
+  checkpoint_interval_fraction: 0.0
+  max_train_batches: 0
+  max_optimizer_updates: 4530
+  gradient_accumulation_steps: 1
+  checkpoint_optimizer_steps:
+  - 453
+  - 906
+  - 1359
+  - 1812
+  - 2265
+  - 2718
+  - 3171
+  - 3624
+  - 4077
+  - 4530
+  checkpoint_name_by_optimizer_step: true
+  data_order_seed: 20260904
+  world_size: 2
+  resume_branch: stage1_t3_to_a2direct_lr4_fresh_optimizer_v1
+checkpoint_path: ''
+experiment_notes:
+  matrix_id: v4_phase_s2_ac_direct_lr4_pilot_v1
+  phase: a2_direct_lr_pilot
+  mechanism: plain_sft_ce
+  data_condition: A2_direct_identity_preserved
+  initializer:
+    path: '{{S1_CHECKPOINT}}'
+    sha256: 7e1fd8dedfb3598ca2593729c76285462fda12bb88e3b2bfcf8011304feb5c79
+  manifest:
+    path: '{{S2_MANIFEST}}'
+    sha256: bbe451927543a389c7f4e749cde1f728a139709e499b13debcab3c52ce3fb60e
+  seed: 20260904
+  formal_status: TRAIN_ONLY_UNEVALUATED
+  arm_id: A2D-LR200
+  lr_tag: LR200
+  lr_multiplier: 2.0
+  release_selection: fixed reported LR200 trajectory; use optimizer step 906 as the
+    S3 initializer
+mixed_precision_dtype: bfloat16

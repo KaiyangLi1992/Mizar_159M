@@ -1,0 +1,15 @@
+{
+  "cpu_contract_tests": 9,
+  "checkpoint_tensor_roundtrip": "all seven pass",
+  "checkpoint_strict_loading": "all seven pass",
+  "model_parameters": 159299840,
+  "joint_q4_manifest_reconstruction": "all five executed SHA256 hashes match",
+  "vllm_smoke": {
+    "engine": "vllm",
+    "version": "0.11.0",
+    "synthetic_examples": 1,
+    "complete": true,
+    "benchmark_evaluation": false
+  },
+  "full_training_repeated": false
+}

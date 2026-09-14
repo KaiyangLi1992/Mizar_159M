@@ -1,0 +1,162 @@
+{
+  "schema": "mizar_local_joint_release_v1",
+  "recipe": "strongAC_plus_AVQA_joint_pool_Q4",
+  "datasets": {
+    "s1": {
+      "path": "data/manifests/s1.json.gz",
+      "bytes": 247516184,
+      "sha256": "111abde09c75abfd8dc6ee66c4762d7557d0b55e62e5cbde0bcc7b485176ac91",
+      "rows": 1477976,
+      "uncompressed_sha256": "de92b7efd1dd6b5fd30b3f62c31639a3bcff6766a088849658fdd6bc8520641d"
+    },
+    "s2": {
+      "path": "data/manifests/s2.json.gz",
+      "bytes": 72255361,
+      "sha256": "7ffe81f9356c73d40201ca288b3d8f6fbc3626434313554e180b7d7623fd1adf",
+      "rows": 289952,
+      "uncompressed_sha256": "bbe451927543a389c7f4e749cde1f728a139709e499b13debcab3c52ce3fb60e"
+    },
+    "s3_candidates": {
+      "path": "data/manifests/s3_candidates.json.gz",
+      "bytes": 47899223,
+      "sha256": "8ec1ab76fd04d677f85bda66a350947767206567caba6beabc42b39c24ad93f2",
+      "rows": 289952,
+      "uncompressed_sha256": "c4b1862f58148d2728dfad10ee8346974924badca6de6b82181ffe605225cc65"
+    },
+    "s3_q4_seed20260905": {
+      "path": "data/manifests/s3_q4_seed20260905.json.gz",
+      "bytes": 8331496,
+      "sha256": "c8c9feb8fbc758ee14c2ad6c3abd36a43f1089f074ebe94f50ac87b63b015bcd",
+      "rows": 38400,
+      "uncompressed_sha256": "ea3467760ac923a4c23f30eda6ab0a32cbbd7faf888702a9493944479622891e"
+    },
+    "s3_q4_seed20260906": {
+      "path": "data/manifests/s3_q4_seed20260906.json.gz",
+      "bytes": 8323592,
+      "sha256": "ee46eac41f4a2ed8aca69661045bf732fd4521bed57e56298ec3295258d34883",
+      "rows": 38400,
+      "uncompressed_sha256": "d6a6f72eb14d5f6714e3fc72369a8687c457f80c700b03daf84e3c358d4a8481"
+    },
+    "s3_q4_seed20260907": {
+      "path": "data/manifests/s3_q4_seed20260907.json.gz",
+      "bytes": 8327026,
+      "sha256": "5100250fcaf02d4329a33d5aa1b503e3714be46332721ed9402e845fbe7407b5",
+      "rows": 38400,
+      "uncompressed_sha256": "6cb1780a50d6148e68e1cb8571759e2746d4d3f3b0e8935883a0045747c9a523"
+    },
+    "s3_q4_seed20260908": {
+      "path": "data/manifests/s3_q4_seed20260908.json.gz",
+      "bytes": 8330222,
+      "sha256": "f2a1817e31d8551b32d19c5c6458d83d85b54899d166efbd8c30100dcc6e9323",
+      "rows": 38400,
+      "uncompressed_sha256": "d588ee939fa66152cced4b639d28fc43eee21131db144f84a8216253d936e6cf"
+    },
+    "s3_q4_seed20260909": {
+      "path": "data/manifests/s3_q4_seed20260909.json.gz",
+      "bytes": 8318781,
+      "sha256": "931e685ae358a8b81b1ae3bc754d2f53e482cc68a4d31f03d9004179a5b92ad0",
+      "rows": 38400,
+      "uncompressed_sha256": "b27f3b0d02f5e976a0b7ae9154d0a6b6f05a9af40aefe305382627a2ca9ccbfb"
+    }
+  },
+  "checkpoints": {
+    "stage3_q4_seed20260905": {
+      "path": "checkpoints/final/stage3_q4_seed20260905.ckpt",
+      "bytes": 637470191,
+      "sha256": "0c542f63e11ed55d360feb0d66e7be0e8c6a878f44cffd302a92388f915388a2",
+      "source_sha256": "bfc03a6423a1d5d60f68b79ac5e4b52743d676e1d0b3f095b5be5dc655de96c8",
+      "tensor_count": 454,
+      "tensor_elements": 187628509,
+      "tensor_roundtrip_exact": true,
+      "format": "PyTorch plain state_dict; weights_only=True; no optimizer"
+    }
+  },
+  "base_models": {
+    "smollm2-135m": {
+      "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+      "files": [
+        {
+          "path": "assets/smollm2-135m/config.json",
+          "bytes": 704,
+          "sha256": "1d556eab73b69c7f11f64c557a2f9c6f440bd4c6b89bb2584a6b498c92603843"
+        },
+        {
+          "path": "assets/smollm2-135m/generation_config.json",
+          "bytes": 111,
+          "sha256": "2056c988e990b0d13670f63f2f3b87b3b6d07edaf7a3416998ba27dab2d8a059"
+        },
+        {
+          "path": "assets/smollm2-135m/merges.txt",
+          "bytes": 466391,
+          "sha256": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510"
+        },
+        {
+          "path": "assets/smollm2-135m/model.safetensors",
+          "bytes": 269060552,
+          "sha256": "80521b40281d6ce74e35c9282c22539e75aa0ac8578892b2a59955ef78d55da1"
+        },
+        {
+          "path": "assets/smollm2-135m/special_tokens_map.json",
+          "bytes": 831,
+          "sha256": "e786b595b9a23148bf1630df78d9037a048ea671e48bfd3549a1e3c233742bb3"
+        },
+        {
+          "path": "assets/smollm2-135m/tokenizer.json",
+          "bytes": 2104556,
+          "sha256": "9ca9acddb6525a194ec8ac7a87f24fbba7232a9a15ffa1af0c1224fcd888e47c"
+        },
+        {
+          "path": "assets/smollm2-135m/tokenizer_config.json",
+          "bytes": 3658,
+          "sha256": "4bb9af56a342753d39374f4016a16574cab299fe088e896f425ce3c433f61424"
+        },
+        {
+          "path": "assets/smollm2-135m/vocab.json",
+          "bytes": 800662,
+          "sha256": "82b84012e3add4d01d12ba14442026e49b8cbbaead1f79ecf3d919784f82dc79"
+        }
+      ]
+    },
+    "ced-small": {
+      "revision": "06bb40c5ec089e96867ebc5246be02441f4a71e4",
+      "files": [
+        {
+          "path": "assets/ced-small/README.md",
+          "bytes": 3406,
+          "sha256": "abadd277170322483db97cb726a566b3e3290d58a4016ed08e0c61c93250c146"
+        },
+        {
+          "path": "assets/ced-small/config.json",
+          "bytes": 25059,
+          "sha256": "8b76f3ed8b7a443cbcc7d124d23c7faf222e690f338e4753920697282978cac9"
+        },
+        {
+          "path": "assets/ced-small/configuration_ced.py",
+          "bytes": 6746,
+          "sha256": "147ac3602c1b35c3309d68575e3f19eb22cc2afe088897397991613e68a82a64"
+        },
+        {
+          "path": "assets/ced-small/feature_extraction_ced.py",
+          "bytes": 6482,
+          "sha256": "d2eff0a8cbc563196f8ccef4180d9e9299d643bfee087a545e97e9c4a9e64cb4"
+        },
+        {
+          "path": "assets/ced-small/model.safetensors",
+          "bytes": 86506420,
+          "sha256": "a495e319a620dec4c8b7ca7bb927667ed68169a9efc1a943ccbf5d5c6f9c0c71"
+        },
+        {
+          "path": "assets/ced-small/modeling_ced.py",
+          "bytes": 20075,
+          "sha256": "c8a8e8b865e4e3dcebffefb40215d6778bfa380ecea388f11806e33521a29327"
+        },
+        {
+          "path": "assets/ced-small/preprocessor_config.json",
+          "bytes": 384,
+          "sha256": "668fbf4f00f9e3915de04fc07a621434ef1746b933662840623a9701291ca55a"
+        }
+      ]
+    }
+  },
+  "release_scope": "primary_model_and_training_data"
+}

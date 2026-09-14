@@ -1,0 +1,28 @@
+name: mizar-train
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10.14
+  - pip
+  - ffmpeg
+  - libsndfile
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cu124
+      - torch==2.5.1
+      - torchaudio==2.5.1
+      - transformers==4.46.3
+      - tokenizers==0.20.3
+      - accelerate==1.13.0
+      - huggingface-hub==0.36.2
+      - safetensors==0.7.0
+      - numpy==1.23.5
+      - scipy==1.15.3
+      - pandas==2.3.3
+      - librosa==0.10.0.post2
+      - soundfile==0.13.1
+      - torchlibrosa==0.1.0
+      - PyYAML==6.0
+      - tqdm==4.67.3
+      - psutil==7.2.2
+      - jsonlines==4.0.0
+      - editdistance==0.8.1
