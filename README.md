@@ -5,7 +5,7 @@ an audio–language mapper. This repository contains the three-stage training co
 and data preparation tools. The released **Stage-3 Q4 model (seed 20260905,
 update 200)** was trained on the joint **strongAC + AVQA** pool.
 
-**[Download the model and training data on Hugging Face](https://huggingface.co/kaiyangli1992/Mizar-159M).**
+**[Download the model and training data on Hugging Face](https://huggingface.co/KaiyangLi/Mizar-159M).**
 
 Start with [checkpoint inference](#use-a-checkpoint) to try the model, or
 [three-stage training](#three-stage-training) to inspect and reproduce the recipe.

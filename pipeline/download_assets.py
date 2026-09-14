@@ -4,7 +4,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--training-data',action='store_true')
-    p.add_argument('--repo-id',default='kaiyangli1992/Mizar-159M');p.add_argument('--revision',default='main')
+    p.add_argument('--repo-id',default='KaiyangLi/Mizar-159M');p.add_argument('--revision',default='main')
     a=p.parse_args()
     from huggingface_hub import snapshot_download
     patterns=['assets/**','checkpoints/final/stage3_q4_seed20260905.ckpt','provenance/local_bundle.json']
