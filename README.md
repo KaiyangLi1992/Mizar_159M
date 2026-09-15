@@ -4,7 +4,7 @@ Mizar is a compact audio-language model that answers questions about sounds. It 
 
 This repository accompanies our paper and includes inference code, the three-stage training pipeline, and data preparation tools.
 
-**[Model](https://huggingface.co/KaiyangLi/Mizar-159M)** · **[Training data](https://huggingface.co/KaiyangLi/Mizar-159M/tree/main/data/manifests)** · **[Data guide](docs/DATA.md)** · **[Training details](docs/TRAINING.md)** · **[Evaluation](docs/EVALUATION.md)**
+**[Mizar family](https://huggingface.co/collections/KaiyangLi/mizar-audio-language-model-family-6aa96a97630d4868ab979b4d)** · **[Model](https://huggingface.co/KaiyangLi/Mizar-159M)** · **[Training data](https://huggingface.co/KaiyangLi/Mizar-159M/tree/main/data/manifests)** · **[Data guide](docs/DATA.md)** · **[Training details](docs/TRAINING.md)** · **[Evaluation](docs/EVALUATION.md)**
 
 ![Figure 1: Mizar architecture and three-stage training.](docs/images/figure1.png)
 
