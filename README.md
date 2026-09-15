@@ -108,4 +108,7 @@ We use MMAU-mini for validation and evaluate on MMAU full9k, MMAR, and ADQA-clea
 
 ## License
 
-See [LICENSE](LICENSE) and [NOTICE](NOTICE). Pretrained assets and datasets retain their upstream licenses.
+This repository is released under the BSD 3-Clause Clear License; see [LICENSE](LICENSE).
+It includes third-party code under the MIT License (the Mellow implementation and
+Microsoft BEATs); see [NOTICE](NOTICE) and [licenses/](licenses/). Pretrained assets and
+datasets retain their upstream licenses.

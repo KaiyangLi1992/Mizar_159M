@@ -1,5 +1,14 @@
-This repository contains code derived from the Mellow audio-language model
-implementation, Copyright (c) 2024 Soham, distributed under the MIT License.
+Mizar 159M
+Copyright (c) 2026 NEC Laboratories America, Inc.
+Released under the BSD 3-Clause Clear License (see LICENSE).
+
+This repository contains third-party code distributed under the MIT License:
+- Code derived from the Mellow audio-language model implementation,
+  Copyright (c) 2024 Soham. Full license text: licenses/Mellow-MIT.txt.
+- BEATs model code in runtime/stage1/models/beats_official/,
+  runtime/stage2/models/beats_official/ and runtime/stage3/models/beats_official/,
+  Copyright (c) 2022 Microsoft. Full license text: licenses/BEATs-MIT.txt.
+  The "LICENSE" referenced in those file headers is licenses/BEATs-MIT.txt.
 
 Mizar experiment modifications, portable launchers, documentation, and
 provenance records were prepared for the 159M Mizar research release.
