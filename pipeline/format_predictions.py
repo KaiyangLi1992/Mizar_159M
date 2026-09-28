@@ -21,7 +21,7 @@ def main():
         pred=by[str(ref['id'])];raw=pred['model_output']
         require(isinstance(raw,str),'Raw generation must be text')
         require(pred.get('finish_reason') in ['stop','length'],'Invalid generation completion')
-        output.append({**ref,'answer_prediction':raw,'model_output':raw})
+        output.append({**ref,'answer_prediction':raw,'model_output':raw,'model_prediction':raw})
     require(not a.output.exists(),f'Refuse overwrite: {a.output}')
     a.output.parent.mkdir(parents=True,exist_ok=True);a.output.write_text(json.dumps(output,ensure_ascii=False,indent=2)+'\n')
     print(a.output)

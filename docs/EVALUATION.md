@@ -56,7 +56,8 @@ python pipeline/format_predictions.py --benchmark mmau-full \
 ```
 
 Submit this complete 9,000-question prediction file through the official MMAU
-benchmark service and preserve its receipt. The public answer fields are
+benchmark service and preserve its receipt. The service scores only the `model_prediction`
+field; the formatter writes the raw generated text there unchanged. The public answer fields are
 placeholders and cannot be used to calculate a local test accuracy. This
 repository does not upload predictions automatically.
 
