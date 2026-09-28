@@ -2,9 +2,9 @@
 
 Mizar is a compact audio-language model that answers questions about sounds. It connects CED-Small to SmolLM2-135M through an audio–language mapper, with 159.3M parameters in total.
 
-This repository accompanies our paper and includes inference code, the three-stage training pipeline, and data preparation tools.
+This repository accompanies our [paper](https://arxiv.org/abs/2609.28344) and includes inference code, the three-stage training pipeline, and data preparation tools.
 
-**[Mizar family](https://huggingface.co/collections/KaiyangLi/mizar-audio-language-model-family-6aa96a97630d4868ab979b4d)** · **[Model](https://huggingface.co/KaiyangLi/Mizar-159M)** · **[Training data](https://huggingface.co/KaiyangLi/Mizar-159M/tree/main/data/manifests)** · **[Data guide](docs/DATA.md)** · **[Training details](docs/TRAINING.md)** · **[Evaluation](docs/EVALUATION.md)**
+**[Paper](https://arxiv.org/abs/2609.28344)** · **[Mizar family](https://huggingface.co/collections/KaiyangLi/mizar-audio-language-model-family-6aa96a97630d4868ab979b4d)** · **[Model](https://huggingface.co/KaiyangLi/Mizar-159M)** · **[Training data](https://huggingface.co/KaiyangLi/Mizar-159M/tree/main/data/manifests)** · **[Data guide](docs/DATA.md)** · **[Training details](docs/TRAINING.md)** · **[Evaluation](docs/EVALUATION.md)**
 
 ![Figure 1: Mizar architecture and three-stage training.](docs/images/figure1.png)
 
