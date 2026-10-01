@@ -6,6 +6,26 @@ This repository accompanies our [paper](https://arxiv.org/abs/2609.28344) and in
 
 **[Paper](https://arxiv.org/abs/2609.28344)** · **[Mizar family](https://huggingface.co/collections/KaiyangLi/mizar-audio-language-model-family-6aa96a97630d4868ab979b4d)** · **[Model](https://huggingface.co/KaiyangLi/Mizar-159M)** · **[Training data](https://huggingface.co/KaiyangLi/Mizar-159M/tree/main/data/manifests)** · **[Data guide](docs/DATA.md)** · **[Training details](docs/TRAINING.md)** · **[Evaluation](docs/EVALUATION.md)**
 
+## MMAU ranking
+
+**Mizar, with only 159.3M parameters, reaches 52.92% on MMAU Test: 4th among the 11 models below, ahead of Gemma 3n E2B, GPT-4o mini Audio, Mellow, M2UGen (7B), and SALMONN (13B).**
+
+| Rank | Model | Parameters | MMAU Test (%) |
+|---:|---|---:|---:|
+| 1 | Audio Flamingo 3 | 8.2B | 72.42 |
+| 2 | Gemini 2.5 Pro | — | 69.36 |
+| 3 | Qwen2-Audio-Instruct | 7B | 57.40 |
+| 4 | **Mizar (ours)** | **159.3M** | **52.92** |
+| 5 | Gemma 3n E2B | 2B† | 52.06 |
+| 6 | GPT-4o mini Audio | — | 51.03 |
+| 7 | Mellow* | 167.0M | 41.47 |
+| 8 | M2UGen | 7B | 39.76 |
+| 9 | SALMONN | 13B | 36.23 |
+| 10 | LTU | 7B | 17.23 |
+| 11 | Audio Flamingo Chat | 1B | 15.59 |
+
+MMAU Test accuracy on MMAU-v05.15.25, sorted by score; Mizar is the mean of five random seeds. Other rows use the official parsed leaderboard; our Mizar and Mellow predictions are generated locally and scored by the official service. \* Mellow uses its official checkpoint and audio preprocessing, evaluated with MMAU's official parser and scoring; its published 52.11% is an earlier Test result, not directly comparable across benchmark revisions and scoring protocols. Counts cover complete Mizar/Mellow models; external sizes follow leaderboard conventions, including Audio Flamingo Chat's rounded 1B. † Gemma 3n E2B reports effective parameters. Source: Table 1 of the [paper](https://arxiv.org/abs/2609.28344).
+
 ![Figure 1: Mizar architecture and three-stage training.](docs/images/figure1.png)
 
 ## Setup
