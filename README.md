@@ -8,7 +8,7 @@ This repository accompanies our [paper](https://arxiv.org/abs/2609.28344) and in
 
 ## MMAU ranking
 
-**Mizar, with only 159.3M parameters, reaches 52.92% on MMAU Test: 4th among the 11 models below, ahead of Gemma 3n E2B, GPT-4o mini Audio, Mellow, M2UGen (7B), and SALMONN (13B).**
+**State of the art under 200M parameters: Mizar (159.3M) reaches 52.92% on MMAU Test, surpassing the previous best sub-200M model, Mellow (41.47%). It also ranks 4th overall among the 11 models below, ahead of Gemma 3n E2B, GPT-4o mini Audio, M2UGen (7B), and SALMONN (13B).**
 
 | Rank | Model | Parameters | MMAU Test (%) |
 |---:|---|---:|---:|
